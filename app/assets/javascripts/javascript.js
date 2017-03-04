@@ -36,14 +36,14 @@ $(function(){
         $('body').append('<div class="modal-overlay"></div>');
         // オーバーレイをフェードイン
         $('.modal-overlay').fadeIn('slow');
-
         // モーダルコンテンツのIDを取得
         var modal = '#' + $(this).attr('data-target');
         // モーダルコンテンツの表示位置を設定
         modalResize();
-         // モーダルコンテンツフェードイン
+        // モーダルコンテンツフェードイン
         $(modal).fadeIn('slow');
-
+        // bodyにlock_scrollクラスを追加
+        $('body').addClass("lock_scroll");
         // 「.modal-overlay」あるいは「.modal-close」をクリック
         $('.modal-overlay, .modal-close').off().click(function(){
             // モーダルコンテンツとオーバーレイをフェードアウト
@@ -52,6 +52,8 @@ $(function(){
                 // オーバーレイを削除
                 $('.modal-overlay').remove();
             });
+            // bodyからlock_scrollクラスを削除
+            $('body').removeClass("lock_scroll");
         });
 
         // リサイズしたら表示位置を再取得
