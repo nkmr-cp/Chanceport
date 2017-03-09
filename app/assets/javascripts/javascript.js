@@ -91,3 +91,17 @@ $(function(){
     $('#send_message').click();
   });
 });
+
+//戻るボタン
+$(function(){
+  $("#back_button").click(function(){
+    history.back();
+  });
+});
+
+//トップページへ戻るボタン
+$(function(){
+  $('#back_to_top_button').click(function(){
+    location.href="/";
+  });
+});

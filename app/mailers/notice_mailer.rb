@@ -8,7 +8,7 @@ class NoticeMailer < ApplicationMailer
   def sendmail_confirm(inquiry)
     @content = inquiry.message
     @name = inquiry.name
-    mail(to: [inquiry.email, "studentsandsociety@gmail.com"], subject: "【お問い合わせ】") do |format|
+    mail(to: "studentsandsociety@gmail.com", subject: "【お問い合わせ】【#{@name}様】") do |format|
       format.text
     end
   end

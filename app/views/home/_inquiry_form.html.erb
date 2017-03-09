@@ -1,0 +1,34 @@
+<h2>お問い合わせ</h2>
+<div class="message_field">
+  <%= form_for @inquiry, :url => inquiry_confirm_path do |f| %>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <%= f.text_field :name, class: "mdl-textfield__input", id: "message_name" %>
+      <label class="mdl-textfield__label">お名前</label>
+    </div>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <%= f.text_field :email, class: "mdl-textfield__input", id: "message_email" %>
+      <label class="mdl-textfield__label">メールアドレス</label>
+    </div>
+    <div class="mdl-textfield mdl-js-textfield">
+      <%= f.text_area :message, class: "mdl-textfield__input", rows: "3", id: "message_content" %>
+      <label class="mdl-textfield__label">メッセージ...</label>
+    </div>
+
+    <% if @inquiry.errors.any? %>
+      <div class="alert alert-danger" role="alert">
+        <strong>入力内容にエラーがあります</strong>
+        <ul>
+          <% @inquiry.errors.each do |attr, msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <%= f.submit '確認', id: 'send_message', style: 'display:none' %>
+  <% end %>
+  <div class="button_div">
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="send_message_button">
+      <i class="material-icons md-18">mail_outline</i> 送信
+    </button>
+  </div>
+</div>

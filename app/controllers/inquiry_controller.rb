@@ -1,10 +1,13 @@
 class InquiryController < ApplicationController
+  def index
+  end
+
   def confirm
     @inquiry = Inquiry.new(inquiry_params)
     if @inquiry.valid?
-      render :action => 'confirm'
+      render action: 'confirm'
     else
-      render :action => 'home/index'
+      render action: 'index'
     end
   end
 

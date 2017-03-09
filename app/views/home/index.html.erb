@@ -18,7 +18,7 @@
   <title>Chanceport</title>
 </head>
 <body>
-<div id="header">
+<div id="home_header">
   <a href="/"><img src="/assets/logo_header.JPG" class="header_logo"></a>
   <div id="navi">
     <ul>
@@ -48,6 +48,11 @@
     <div class="button_div">
       <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
         <i class="fa fa-sign-in" aria-hidden="true"></i> LOGIN
+      </button>
+    </div>
+    <div class="button_div">
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+        <i class="fa fa-sign-in" aria-hidden="true"></i> 新規登録
       </button>
     </div>
   </div>
@@ -244,92 +249,9 @@
   </div>
 </div>
 <div id="contents_7" class="">
-  <h2>お問い合わせ</h2>
-  <div class="message_field">
-    <%= form_for @inquiry, :url => inquiry_confirm_path do |f| %>
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <%= f.text_field :name, class: "mdl-textfield__input", id: "message_name" %>
-        <label class="mdl-textfield__label">お名前</label>
-      </div>
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <%= f.text_field :email, class: "mdl-textfield__input", id: "message_email" %>
-        <label class="mdl-textfield__label">メールアドレス</label>
-      </div>
-      <div class="mdl-textfield mdl-js-textfield">
-        <%= f.text_area :message, class: "mdl-textfield__input", rows: "3", id: "message_content" %>
-        <label class="mdl-textfield__label">メッセージ...</label>
-      </div>
-
-      <% if @inquiry.errors.any? %>
-        <div class="alert alert-danger" role="alert">
-          <strong>入力内容にエラーがあります</strong>
-          <ul>
-            <% @inquiry.errors.each do |attr, msg| %>
-              <li><%= msg %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
-      <%= f.submit '確認', id: 'send_message', style: 'display:none' %>
-    <% end %>
-    <div class="button_div">
-      <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="send_message_button">
-        <i class="material-icons md-18">mail_outline</i> 送信
-      </button>
-    </div>
-  </div>
+  <%= render 'inquiry_form' %>
 </div>
-<footer class="mdl-mega-footer">
-  <div class="mdl-mega-footer__middle-section">
-    <div class="mdl-mega-footer__drop-down-section">
-      <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
-      <h1 class="mdl-mega-footer__heading">Features</h1>
-      <ul class="mdl-mega-footer__link-list">
-        <li><a href="#">About</a></li>
-        <li><a href="#">Terms</a></li>
-        <li><a href="#">Partners</a></li>
-        <li><a href="#">Updates</a></li>
-      </ul>
-    </div>
-    <div class="mdl-mega-footer__drop-down-section">
-      <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
-      <h1 class="mdl-mega-footer__heading">Details</h1>
-      <ul class="mdl-mega-footer__link-list">
-        <li><a href="#">Specs</a></li>
-        <li><a href="#">Tools</a></li>
-        <li><a href="#">Resources</a></li>
-      </ul>
-    </div>
-    <div class="mdl-mega-footer__drop-down-section">
-      <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
-      <h1 class="mdl-mega-footer__heading">Technology</h1>
-      <ul class="mdl-mega-footer__link-list">
-        <li><a href="#">How it works</a></li>
-        <li><a href="#">Patterns</a></li>
-        <li><a href="#">Usage</a></li>
-        <li><a href="#">Products</a></li>
-        <li><a href="#">Contracts</a></li>
-      </ul>
-    </div>
-    <div class="mdl-mega-footer__drop-down-section">
-      <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
-      <h1 class="mdl-mega-footer__heading">FAQ</h1>
-      <ul class="mdl-mega-footer__link-list">
-        <li><a href="#">Questions</a></li>
-        <li><a href="#">Answers</a></li>
-        <li><a href="#">Contact us</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="mdl-mega-footer__bottom-section">
-    <div class="mdl-logo">Title</div>
-    <ul class="mdl-mega-footer__link-list">
-      <li><a href="#">Help</a></li>
-      <li><a href="#">Privacy &amp; Terms</a></li>
-    </ul>
-    <div class="copyright">Copyright &copy; Chanceport All rights reserved.</div>
-  </div>
-</footer>
+<%= render 'footer' %>
 <div id="modal1" class="modal-content">
  <h1>TOPIX1</h1>
  <img src="/assets/fireworks.jpg">
