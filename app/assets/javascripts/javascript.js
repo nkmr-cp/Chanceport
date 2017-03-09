@@ -13,7 +13,7 @@ $(function(){
       // 移動先を取得
       var target = $(href == "#" || href == "" ? 'html' : href);
       // 移動先を数値で取得
-      var position = target.offset().top-66;
+      var position = target.offset().top-96;
       // スムーススクロール
       $('body,html').animate({scrollTop:position}, speed, 'swing');
       return false;
@@ -82,5 +82,12 @@ $(function(){
 $(function(){
   $('.team_members_button').click(function(){
     location.href='member';
+  });
+});
+
+//お問い合わせフォームの送信 
+$(function(){
+  $('#send_message_button').click(function(){
+    $('#send_message').click();
   });
 });

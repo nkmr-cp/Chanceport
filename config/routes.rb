@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   root 'home#index'
   get 'member' => 'home#member'
+  post 'inquiry/confirm' => 'inquiry#confirm'
+  post 'inquiry/thanks'  => 'inquiry#thanks'
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

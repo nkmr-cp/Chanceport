@@ -228,33 +228,52 @@
 </div>
 <div id="contents_5" class="">
   <h2>学生の方</h2>
+  <div class="student_flow">
+  </div>
+  <div class="button_div">
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+      メルマガ会員に登録する
+    </button>
+  </div>
 </div>
 <div id="contents_6" class="">
   <h2>社会人の方</h2>
+  <div class="worker_flow">
+  </div>
+  <div class="button_div">
+  </div>
 </div>
 <div id="contents_7" class="">
   <h2>お問い合わせ</h2>
   <div class="message_field">
-    <form action="#">
+    <%= form_for @inquiry, :url => inquiry_confirm_path do |f| %>
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" id="message_name">
-        <label class="mdl-textfield__label" for="sample3">お名前</label>
+        <%= f.text_field :name, class: "mdl-textfield__input", id: "message_name" %>
+        <label class="mdl-textfield__label">お名前</label>
       </div>
-    </form>
-    <form action="#">
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" id="message_email">
-        <label class="mdl-textfield__label" for="sample3">メールアドレス</label>
+        <%= f.text_field :email, class: "mdl-textfield__input", id: "message_email" %>
+        <label class="mdl-textfield__label">メールアドレス</label>
       </div>
-    </form>
-    <form action="#">
       <div class="mdl-textfield mdl-js-textfield">
-        <textarea class="mdl-textfield__input" type="text" rows= "3" id="message_content" ></textarea>
-        <label class="mdl-textfield__label" for="sample5">メッセージ...</label>
+        <%= f.text_area :message, class: "mdl-textfield__input", rows: "3", id: "message_content" %>
+        <label class="mdl-textfield__label">メッセージ...</label>
       </div>
-    </form>
+
+      <% if @inquiry.errors.any? %>
+        <div class="alert alert-danger" role="alert">
+          <strong>入力内容にエラーがあります</strong>
+          <ul>
+            <% @inquiry.errors.each do |attr, msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <%= f.submit '確認', id: 'send_message', style: 'display:none' %>
+    <% end %>
     <div class="button_div">
-      <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="send_message_button">
         <i class="material-icons md-18">mail_outline</i> 送信
       </button>
     </div>
@@ -262,7 +281,6 @@
 </div>
 <footer class="mdl-mega-footer">
   <div class="mdl-mega-footer__middle-section">
-
     <div class="mdl-mega-footer__drop-down-section">
       <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
       <h1 class="mdl-mega-footer__heading">Features</h1>
@@ -273,7 +291,6 @@
         <li><a href="#">Updates</a></li>
       </ul>
     </div>
-
     <div class="mdl-mega-footer__drop-down-section">
       <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
       <h1 class="mdl-mega-footer__heading">Details</h1>
@@ -283,7 +300,6 @@
         <li><a href="#">Resources</a></li>
       </ul>
     </div>
-
     <div class="mdl-mega-footer__drop-down-section">
       <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
       <h1 class="mdl-mega-footer__heading">Technology</h1>
@@ -295,7 +311,6 @@
         <li><a href="#">Contracts</a></li>
       </ul>
     </div>
-
     <div class="mdl-mega-footer__drop-down-section">
       <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
       <h1 class="mdl-mega-footer__heading">FAQ</h1>
@@ -305,22 +320,16 @@
         <li><a href="#">Contact us</a></li>
       </ul>
     </div>
-
   </div>
-
   <div class="mdl-mega-footer__bottom-section">
     <div class="mdl-logo">Title</div>
     <ul class="mdl-mega-footer__link-list">
       <li><a href="#">Help</a></li>
-      <li><a href="#">Privacy & Terms</a></li>
+      <li><a href="#">Privacy &amp; Terms</a></li>
     </ul>
     <div class="copyright">Copyright &copy; Chanceport All rights reserved.</div>
   </div>
-
-  
-
 </footer>
-
 <div id="modal1" class="modal-content">
  <h1>TOPIX1</h1>
  <img src="/assets/fireworks.jpg">
