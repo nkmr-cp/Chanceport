@@ -1,22 +1,28 @@
 class InquiryController < ApplicationController
+  #viewの表示のためにコントローラーを設置
   def index
   end
-
+  
+  #確認画面を生成するコントローラー
   def confirm
+    #データの取得
     @inquiry = Inquiry.new(inquiry_params)
+    #データのバリデーション
     if @inquiry.valid?
       render action: 'confirm'
     else
+      #元のフォームに戻ってエラーメッセージを表示
       render action: 'index'
     end
   end
 
+  #送信完了画面を生成するコントローラー 
   def thanks
+    #データの取得
     @inquiry = Inquiry.new(inquiry_params)
-    # send mail
+    #メール送信
     NoticeMailer.sendmail_confirm(@inquiry).deliver
-
-    flash[:notice] = "お問い合わせ頂き、ありがとうございました。"
+    #viewの選択
     render :action => 'thanks'
   end
 

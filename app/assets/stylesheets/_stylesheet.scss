@@ -360,21 +360,121 @@ a.modal-close {
 
 #contents_5 {
   width: 100%;
-  height: 800px;
+  height: 1100px;
   padding-top: 10px;
   background-color: rgba(68, 201, 246, 0.3);
   h2 {
     text-align: center;
   }
-  .student_flow{
-    width: 80%;
-    height: 500px;
-    background-color: blue;
-    margin: 0 auto;
+  >p{
+    text-align: center;
   }
-  button {
-    margin: 20px;
-    color: #fff;
+  .student_flow{
+    width: 900px;
+    height: 800px;
+    margin: 50px auto;
+    .student_flow_card_row{
+      width: 100%;
+      height: 380px;
+      margin: 0;
+      &:first-child{
+        margin-bottom: 40px;
+        .student_flow_card_content{
+          float: left;
+          &:nth-child(1){
+            .student_flow_card_image{
+              background: url('/assets/click.png');
+              background-size: contain;  
+            }      
+          }
+          &:nth-child(3){
+            .student_flow_card_image{
+              background: url('/assets/deskwork.png');
+              background-size: contain;  
+            }      
+          }
+          &:nth-child(5){
+            .student_flow_card_image{
+              background: url('/assets/job_interview.png');
+              background-size: contain;  
+            }      
+          }
+        }
+        .arrow_between_cards{
+          float: left;
+        }
+      }
+      &:nth-child(2){
+        .student_flow_card_content{
+          &:nth-child(1){
+            .student_flow_card_image{
+              background: url('/assets/yahoo.png');
+              background-size: contain;  
+            }
+          }
+          &:nth-child(3){
+            .student_flow_card_image{
+              background: url('/assets/report.png');
+              background-size: contain;  
+            }
+          }
+          &:nth-child(5){
+            .student_flow_card_image{
+              background: url('/assets/meeting.png');
+              background-size: contain;  
+            }
+          }
+        }
+      }
+      .student_flow_card_content{
+        width: 210px;
+        height: 100%;
+        float: right;
+        border: solid rgb(130,130,130) 0.5px;
+        border-radius: 5px;
+        &:first-child{
+          margin-left: 0;
+        }
+        .student_flow_card_image{
+          width: 150px;
+          height: 150px;
+          margin: 30px;
+          background-color: green;
+          border-bottom: solid rgb(150,150,150) 1px;
+        }
+        .student_flow_card_description{
+          width: 190px;
+          height: 170px;
+          margin: 0 auto;
+          h5{
+            text-align: center;
+          }
+          p{
+            line-height: 1.5em;
+          }
+        }
+      }
+      .arrow_between_cards{
+        height: 100%;
+        width: 20px;
+        float: right;
+        margin: 0;
+        i{
+          display: block;
+          width: 100%;
+          margin-top: 180px;
+        }
+      }
+    }
+  }
+  .button_div{
+    width: 100%;
+    margin-top: 50px;
+    button {
+      margin: 0 auto;
+      width: 300px;
+      color: #fff;
+    }
   }
 }
 
@@ -382,17 +482,82 @@ a.modal-close {
 
 #contents_6 {
   width: 100%;
-  height: 800px;
+  height: 750px;
   padding-top: 10px;
   background-color: rgba(249, 166, 26, 0.3);
-  h2 {
+  h2,p {
     text-align: center;
   }
   .worker_flow{
-    width: 80%;
-    height: 500px;
-    background-color: red;
-    margin: 0 auto;
+    width: 900px;
+    height: 460px;
+    margin: 50px auto;
+    .worker_flow_card_row{
+      height: 210px;
+      width: 100%;
+      &:first-child{
+        margin-bottom: 40px;
+        .worker_flow_card_content{
+          &:first-child{
+            background: url('/assets/art.png');
+            background-size: contain;
+          }
+          &:nth-child(2){
+            background: url('/assets/film.png');
+            background-size: contain;
+          }
+          &:nth-child(3){
+            background: url('/assets/computer.png');
+            background-size: contain;
+          }
+          &:nth-child(4){
+            background: url('/assets/webpage.png');
+            background-size: contain;
+          }
+        }
+      }
+      &:nth-child(2){
+        .worker_flow_card_content{
+          &:first-child{
+            background: url('/assets/comment.png');
+            background-size: contain;
+          }
+          &:nth-child(2){
+            background: url('/assets/analysis.png');
+            background-size: contain;
+          }
+          &:nth-child(3){
+            background: url('/assets/pdf.png');
+            background-size: contain;
+          }
+          &:nth-child(4){
+            background: url('/assets/student.png');
+            background-size: contain;
+          }
+        }
+      }
+      .worker_flow_card_content{
+        width: 210px;
+        height: 100%;
+        margin-left: 20px;
+        float: left;
+        position: relative;
+        &:first-child{
+          margin-left: 0;
+        }
+        .worker_flow_card_description{
+          width: 100%;
+          background-color: rgba(50,50,50,0.7);
+          color: rgb(220,220,220);
+          text-align: center;
+          position: absolute;
+          bottom: 0;
+          p{
+            margin: 3px auto;
+          }
+        }
+      }
+    }
   }
   button {
     margin: 20px;
@@ -433,8 +598,13 @@ a.modal-close {
 
 footer {
   .copyright {
-    float: right;
-    color: #fff;
+    width: 100%;
+    padding-right: 30px;
+    p{
+      float: right;
+      display: block;
+    }
+    color: rgb(230,230,230);
   }
 }
 
@@ -462,7 +632,7 @@ div.confirmation_card{
 
 div.inquiry_completed_card{
   width: 30%;
-  margin: 100px auto;
+  margin: 150px auto;
   h4,p{
     text-align: center;
   }
@@ -482,7 +652,7 @@ div.inquiry_completed_card{
 #main {
   width: 100%;
   height: 2400px;
-  margin-top: 69px;
+  margin-top: 60px;
   padding-top: 30px;
   background-color: rgb(245, 245, 245);
   h2 {
