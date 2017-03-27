@@ -1,5 +1,5 @@
 class InquiryController < ApplicationController
-  #viewの表示のためにコントローラーを設置
+  #バリデーションを通らなかった場合のviewの表示のためにコントローラーを設置
   def index
   end
   
@@ -9,6 +9,7 @@ class InquiryController < ApplicationController
     @inquiry = Inquiry.new(inquiry_params)
     #データのバリデーション
     if @inquiry.valid?
+      #バリデーションを通過した場合確認画面へ
       render action: 'confirm'
     else
       #元のフォームに戻ってエラーメッセージを表示

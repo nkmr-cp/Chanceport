@@ -6,4 +6,7 @@ class HomeController < ApplicationController
 
   def member
   end
+
+  def privacy
+  end
 end

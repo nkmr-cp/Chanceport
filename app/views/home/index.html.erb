@@ -20,6 +20,20 @@
 <body>
 <div id="home_header">
   <a href="/"><img src="/assets/logo_header.JPG" class="header_logo"></a>
+  <div id="header-menu">
+    <div class="header-menu-icon">
+      <i class="material-icons">account_circle</i>
+      <p>新規登録</p>
+    </div>
+    <div class="header-menu-icon">
+      <i class="fa fa-book" aria-hidden="true"></i>
+      <p>CP BLOG</p>
+    </div>
+    <div class="header-menu-icon">
+      <i class="fa fa-star" aria-hidden="true"></i>
+      <p>運営に参加</p>
+    </div>
+  </div>
   <div id="navi">
     <ul>
       <li><a href="#contents_7" class="">お問い合わせ</a></li>
@@ -97,7 +111,7 @@
 <div id="contents_4" class="">
   <h2>OUR PROJECTS</h2>
   <div class="card_field">
-    <div class="demo-card-square mdl-card mdl-shadow--2dp">
+    <!--<div class="demo-card-square mdl-card mdl-shadow--2dp">
       <p>☆ 主な活動内容 ☆</p>
       <ol class="defaultlist list12">
         <li class="list12-count">企業へのコンサルティング​</li>
@@ -107,14 +121,29 @@
         <li class="list12-count">プロジェクトの部分外注</li>
         <li class="list12-count">学生への情報配信</li>
       </ol>
+    </div>-->
+    <div class="demo-card-square mdl-card mdl-shadow--2dp project-card-3">
+      <div class="mdl-card__title mdl-card--expand">
+        <h2 class="mdl-card__title-text">セラフィオーレ展示会</h2>
+      </div>
+      <div class="mdl-card__supporting-text">
+        先生の初の展示会主宰に向けての準備。<br>
+        some more text<br>
+        some more text
+      </div>
+      <div class="mdl-card__actions mdl-card--border">
+        <a data-target="modal3" class="modal-open mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+          Read More
+        </a>
+      </div>
     </div>
     <div class="demo-card-square mdl-card mdl-shadow--2dp project-card-1">
       <div class="mdl-card__title mdl-card--expand">
-        <h2 class="mdl-card__title-text">2017/02/06</h2>
+        <h2 class="mdl-card__title-text">お面プロモーション</h2>
       </div>
       <div class="mdl-card__supporting-text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Aenan convallis.
+        アーティストとコラボし、お面のオンラインプレゼンスを生むプロモーションを行いました。<br>
+        some more text
       </div>
       <div class="mdl-card__actions mdl-card--border">
         <a data-target="modal1" class="modal-open mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
@@ -124,11 +153,11 @@
     </div>
     <div class="demo-card-square mdl-card mdl-shadow--2dp project-card-2">
       <div class="mdl-card__title mdl-card--expand">
-        <h2 class="mdl-card__title-text">2017/02/06</h2>
+        <h2 class="mdl-card__title-text">作文教室立ち上げ</h2>
       </div>
       <div class="mdl-card__supporting-text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Aenan convallis.
+        春の開校に向けての準備として、HPの作成をお手伝いしました。<br>
+        some more text
       </div>
       <div class="mdl-card__actions mdl-card--border">
         <a data-target="modal2" class="modal-open mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
@@ -137,17 +166,17 @@
       </div>
     </div>
   </div>
-  <div class="card_field toggle_projects_target" style="display:none;">
+  <!--<div class="card_field toggle_projects_target" style="display:none;">
     <div class="demo-card-square mdl-card mdl-shadow--2dp project-card-3">
       <div class="mdl-card__title mdl-card--expand">
-        <h2 class="mdl-card__title-text">2017/02/06</h2>
+        <h2 class="mdl-card__title-text">お面プロモーション</h2>
       </div>
       <div class="mdl-card__supporting-text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Aenan convallis.
+        
+        アーティストとコラボし、お面のオンラインプレゼンスを生むプロモーションを行いました。
       </div>
       <div class="mdl-card__actions mdl-card--border">
-        <a data-target="modal1" class="modal-open mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+        <a data-target="modal3" class="modal-open mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
           Read More
         </a>
       </div>
@@ -181,7 +210,7 @@
       </div>
     </div>
   </div>
-  <div class="card_field toggle_projects_target" style="display:none;">
+  <!--<div class="card_field toggle_projects_target" style="display:none;">
     <div class="demo-card-square mdl-card mdl-shadow--2dp project-card-6">
       <div class="mdl-card__title mdl-card--expand">
         <h2 class="mdl-card__title-text">2017/02/06</h2>
@@ -225,11 +254,11 @@
       </div>
     </div>
   </div>
-  <div class="button_div">
+  <!--<div class="button_div">
     <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="toggle_projects">
-      <!--<i class="material-icons md-18">keyboard_arrow_down</i>--> 全プロジェクトを表示/非表示
+      全プロジェクトを表示/非表示
     </button>
-  </div>
+  </div>-->
 </div>
 <div id="contents_5" class="">
   <h2>学生の方</h2>
@@ -359,17 +388,6 @@
   <%= render 'inquiry_form' %>
 </div>
 <%= render 'footer' %>
-<div id="modal1" class="modal-content">
- <h1>TOPIX1</h1>
- <img src="/assets/fireworks.jpg">
- <p>サンプルテキスト。</p>
- <a class="modal-close">×</a>
-</div>
-<div id="modal2" class="modal-content">
- <h1>TOPIX2</h1>
- <img src="/assets/fireworks.jpg">
- <p>サンプルテキスト。</p>
- <a class="modal-close">×</a>
-</div>
+<%= render 'modals' %>
 </body>
 </html>
